@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    background-color: #061A40;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav .logo {
+    margin-right: 10px; /* Optional: spacing between logo and company name */
+}
+
+.right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
+    margin-left: 10px; /* Optional: spacing between the icons */
+}
+
+
+.nav .left-nav .logo img{
+    height: 3rem;
+    margin: .5rem 0 .5rem 0;
+}
+
+.nav .left-nav .company-name h1{
+    color: #ffffff;
+    margin-top: .5rem;
+}
+
+.nav .right-nav .user i{
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.7rem 0 0.5rem 0;
+}
+.nav .right-nav .notification i{
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.7rem 0 0.5rem 0;
+}
+
+.get-in-touch{
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+
+.get-in-touch{
+    padding: 0.5rem;
+}
+
+.box-1{
+    display: flex;
+}
+
+.box-1-1{
+    flex: 1;
+}
+
+.box-1-2{
+    flex: 3;
+    background-color: bisque;
+}
+
+.box-1-1 .menu{
+    width: 60%;
+    height: 20rem;
+    margin: 1rem 10% 10% 10%;
+    background-color: #5C6C7D;
+    border-radius: 10px;
+    padding: 10px;
+}
