@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .nav{
@@ -57,24 +58,190 @@
     padding: 0.5rem;
 }
 
+
+.slider{
+    display: flex;
+    justify-content: center;
+}
+
+/* Adjusted width of slider-container to 40vh */
+.slider-container {
+    width: 200vh;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(100% * 6); /* Adjust according to the number of images */
+}
+
+/* Ensure 4 photos fit within the frame at the same time with margin */
+.slide {
+    min-width: calc(25% - 10px); /* Adjust to fit 4 images with margin */
+    margin: 0 5px; /* Margin between images */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+/* Adjusted arrow button positions */
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+
 .box-1{
     display: flex;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .box-1-1{
     flex: 1;
+    margin-right: 0;
 }
 
 .box-1-2{
-    flex: 3;
-    background-color: bisque;
+    flex: 4;
 }
 
 .box-1-1 .menu{
-    width: 60%;
+    width: 80%;
     height: 20rem;
-    margin: 1rem 10% 10% 10%;
-    background-color: #5C6C7D;
+    margin: 1rem 0 1rem 2.5rem;
+    background: linear-gradient(to bottom, #01024d, #1b1dc7);
     border-radius: 10px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box-1-1 .image{
+    width: 80%;
+    height: 15rem;
+    background-color: #5C6C7D;
+    margin: 1rem 0 1rem 2.5rem;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.box-1 .box-1-1 .menu .option{
+    font-weight: 600;
+    color: #ffffff;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box-1 .box-1-1 .menu .option:hover{
+    background-color: #ffffff;
+    color: #6F2A1C;
+}
+
+.box-1 .box-1-2 .offer, .difference{
+    padding: 10px;
+    margin: 1rem 1rem 1rem 0;
+}
+
+.box-1 .box-1-2 .offer h1{
+    margin-bottom: 5px;
+    color: #6F2A1C;
+}
+
+.box-1 .box-1-2 .difference h1{
+    margin-top: 20px;
+    margin-bottom: 1rem;
+    color: #6F2A1C;
+}
+
+.box-1 .box-1-2 .difference ul li{
+    font-weight: 600;
+}
+
+.box-1 .box-1-2 .difference ul{
+    margin-left: 3rem;
+}
+
+.box-2{
+    width: 100%;
+    height: 25rem;
+    background: linear-gradient(to bottom, #ffffff, #dde1f1, #ffffff)
+}
+
+.box-2 .heading{
+    display: felx;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    color: #6F2A1C;
+}
+
+.box-2 .providers{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box-2 .providers .provider{
+    width: 15rem;
+    height: 20rem;
+    background: linear-gradient(to bottom, #01024d, #1b1dc7);
+    border-radius: 10px;
+    box-shadow: 10px 10px 12px 0 #9394dc;
+}
+
+.box-2 .providers .provider img{
+    width: 12rem;
+    margin: 1.5rem;
+    border-radius: 5px;
+}
+
+.box-2 .providers .provider .view-btn{
+    width: 10rem;
+    height: 2rem;
+    margin: 0 2.5rem 1rem 2.5rem;
+    background-color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    background-color: #D5C0B2;
+    justify-content: space-between;
+    padding: 1rem;
 }
