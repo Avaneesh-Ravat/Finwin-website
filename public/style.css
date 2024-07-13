@@ -173,13 +173,13 @@ button {
 
 .box-1 .box-1-2 .offer h1{
     margin-bottom: 5px;
-    color: #6F2A1C;
+    color: #1b1dc7;
 }
 
 .box-1 .box-1-2 .difference h1{
     margin-top: 20px;
     margin-bottom: 1rem;
-    color: #6F2A1C;
+    color: #1b1dc7;
 }
 
 .box-1 .box-1-2 .difference ul li{
@@ -190,51 +190,60 @@ button {
     margin-left: 3rem;
 }
 
-.box-2{
-    width: 100%;
-    height: 25rem;
-    background: linear-gradient(to bottom, #ffffff, #dde1f1, #ffffff)
-}
 
-.box-2 .heading{
+.heading{
     display: felx;
     justify-content: center;
     padding: 1rem;
     text-align: center;
-    color: #6F2A1C;
+    color: #1b1dc7;
 }
 
-.box-2 .providers{
-    display: flex;
-    justify-content: space-around;
+.box-2-wrapper{
+    overflow: hidden;
 }
 
-.box-2 .providers .provider{
-    width: 15rem;
-    height: 20rem;
-    background: linear-gradient(to bottom, #01024d, #1b1dc7);
-    border-radius: 10px;
-    box-shadow: 10px 10px 12px 0 #9394dc;
-}
-
-.box-2 .providers .provider img{
-    width: 12rem;
-    margin: 1.5rem;
+.providers .provider .bank-image{
+    width: 10rem;
+    height: 10rem;
     border-radius: 5px;
 }
 
-.box-2 .providers .provider .view-btn{
-    width: 10rem;
-    height: 2rem;
-    margin: 0 2.5rem 1rem 2.5rem;
-    background-color: #ffffff;
-    font-weight: 600;
-    text-align: center;
-    border-radius: 1rem;
-    cursor: pointer;
+.providers .provider{
+    color: #1b1dc7;
+    user-select: none;
+    height: 15rem;
+    background: linear-gradient(to bottom, #01024d, #1b1dc7);
+    border-radius: 10px;
+    padding: .9rem;
+    margin: 1.5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.providers .provider .view-btn{
+    background-color: #ffffff;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.providers .provider .view-btn:hover{
+    background: #8582826f;
+    border: 1px solid white;
+    color: white;
+}
+
+.box-2-wrapper .swiper-slide-button{
+    color: #ffffff;
+    background: #434141c5;
 }
 
 .footer{

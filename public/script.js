@@ -4,7 +4,7 @@ const totalSlides = slides.length;
 const sliderWrapper = document.querySelector('.slider-wrapper');
 
 // Clone the first 4 slides and append them to the end
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 10; i++) {
     const clone = slides[i].cloneNode(true);
     sliderWrapper.appendChild(clone);
 }
@@ -65,3 +65,40 @@ function updateSliderPosition() {
 setInterval(() => {
     moveToNextSlide();
 }, 2000);
+
+
+//swiper js code ------------------------------------
+const swiper = new Swiper('.box-2-wrapper', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: true,
+
+    pagination: {
+        el: 'swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+    },
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1
+        },
+        620: {
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 4
+        }
+    }
+  });
