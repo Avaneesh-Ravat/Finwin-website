@@ -13,10 +13,17 @@ app.use(express.static(path.join(__dirname, "public"))); // to use html, css, js
 app.use(express.urlencoded({extended: true})); // parse post request data
 app.use(express.json()); // to handle json data
 
+//to render index page
+app.get("/", (req, res)=>{
+    res.render("index.ejs");
+})
+
+
 
 //to render home page
+
 app.get("/home", (req, res)=>{
-    res.render("index.ejs");
+    res.render("home.ejs");
 });
 
 
