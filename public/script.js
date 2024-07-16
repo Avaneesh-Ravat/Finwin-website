@@ -2,6 +2,14 @@ let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 const sliderWrapper = document.querySelector('.slider-wrapper');
+//navbar responsive
+
+const hamburger = document.querySelector('.hamburger');
+const rightNav = document.querySelector('.right-nav');
+
+hamburger.addEventListener('click', () => {
+    rightNav.classList.toggle('show');
+});
 
 // Clone the first 4 slides and append them to the end
 for (let i = 0; i < 10; i++) {
@@ -58,7 +66,9 @@ function moveToPrevSlide() {
 }
 
 function updateSliderPosition() {
-    sliderWrapper.style.transform = `translateX(-${currentIndex * (25 + 2.5)}%)`;
+    
+    const slideWidth = document.querySelector('.slide').offsetWidth;
+    sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
 // Auto slide every 2 seconds
