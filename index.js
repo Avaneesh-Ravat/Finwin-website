@@ -27,6 +27,11 @@ app.get("/home", (req, res)=>{
 });
 
 
+//to render emi calculator
+app.get("/emiCalculator", (req, res)=>{
+    res.render("emiCalculator.ejs");
+})
+
 app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);
 });

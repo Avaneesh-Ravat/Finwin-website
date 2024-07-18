@@ -65,59 +65,6 @@
 }
 
 
-.slider{
-    display: flex;
-    justify-content: center;
-}
-
-/* Adjusted width of slider-container to 40vh */
-.slider-container {
-    width: 200vh;
-    height: 50vh;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-}
-
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(100% * 6); /* Adjust according to the number of images */
-}
-
-/* Ensure 4 photos fit within the frame at the same time with margin */
-.slide {
-    min-width: calc(25% - 10px); /* Adjust to fit 4 images with margin */
-    margin: 0 5px; /* Margin between images */
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-button {
-    position: absolute;
-    top: 35%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
-
-/* Adjusted arrow button positions */
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
 
 
 .box-1{
@@ -145,10 +92,6 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-#current{
-    background-color: #bcd7f18c;
 }
 
 .box-1-1 .image{
@@ -180,145 +123,65 @@ button {
     color: #6F2A1C;
 }
 
-.box-1 .box-1-2 .offer, .difference{
+.box-1 .box-1-2 .calculator{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-1 .box-1-2 .heading{
+    display: flex;
+    justify-content: center;
+    margin-top: .75rem;
+}
+
+.box-1 .box-1-2 .sliders, .emi{
     padding: 10px;
     margin: 1rem 1rem 1rem 0;
-}
-
-.box-1 .box-1-2 .offer h1{
-    margin-bottom: 5px;
-    color: #1b1dc7;
-}
-
-.box-1 .box-1-2 .difference h1{
-    margin-top: 20px;
-    margin-bottom: 1rem;
-    color: #1b1dc7;
-}
-
-.box-1 .box-1-2 .difference ul li{
-    font-weight: 600;
-}
-
-.box-1 .box-1-2 .difference ul{
-    margin-left: 3rem;
-}
-
-
-.heading{
-    display: flex;
-    padding: 1rem;
-    color: #1b1dc7;
-    margin-top: 2rem;
-    margin-left: 1rem;
-}
-
-.heading .line{
-    border-top: 3px solid #1b1dc7;
-    width: 10rem;
-    height: 3px;
-    margin-left: 3px;
-    margin-top: 1.2rem;
-}
-
-.box-2-wrapper{
-    overflow: hidden;
-}
-
-.providers .provider .bank-image{
-    width: 10rem;
-    height: 10rem;
-    border-radius: 5px;
-}
-
-.providers .provider{
-    color: #1b1dc7;
-    user-select: none;
-    height: 15rem;
-    background: linear-gradient(to bottom, #01024d, #1b1dc7);
-    border-radius: 10px;
-    padding: .9rem;
-    margin: 1.5rem;
+    width: 40%;
+    height: 25rem;
+    border: 1px solid #5494f3;
+    background: linear-gradient(to bottom, #5494f3, #ffffff);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5s ease-in-out;
+    border-radius: 1rem;
 }
 
-.providers .provider:hover{
-    transform: scale(1.1);
+#current{
+    background-color: #bcd7f18c;
 }
 
-.providers .provider .view-btn{
-    background-color: #ffffff;
-    width: 6rem;
+.sliders div {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    border-radius: 5px;
+    flex-direction: column;
+}
+
+label {
     margin-top: 10px;
-    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.providers .provider .view-btn:hover{
-    background: #8582826f;
-    border: 1px solid white;
-    color: white;
-}
-
-.box-2-wrapper .swiper-slide-button{
-    color: #ffffff;
-    background: #434141c5;
-}
-
-/* box-3 credit products---------------------------------------------------------------------------------- */
-
-.credit-products{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.credit-products .credit-product{
-    width: 400px;
-    height: 12.5rem;
-    margin: 2.5rem;
-    border: 1px solid #cccccdb7;
-    border-radius: 10px;
-    display: flex;
-}
-
-.credit-products .credit-product:hover{
-    box-shadow: 2px 2px 10px #d6d7d8d3;
+input[type="range"] {
+    width: 300px;
 }
 
 
-.credit-products .credit-product .content{
+#emiValue {
+    font-size: 24px;
+    color: #333;
+}
+
+.footer{
     margin-top: 1rem;
-    margin-left: 1rem;
-    flex: 4;
-}
-
-.credit-products .credit-product .content p{
-    margin-top: .5rem;
-    color: #817f7f;
-}
-
-.credit-products .credit-product .image{
-    flex: 1;
-    margin-top: -1rem;
-}
-
-.credit-products .credit-product .image img{
-    width: 6rem;
-}
-
-.credit-products .credit-product .content .btn{
-    margin-top: 5rem;
-    color: #1b1dc7;
-    cursor: pointer;
+    margin-bottom: 1rem;
+    display: flex;
+    background-color: #0e092a;
+    color: #ffffff;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .footer{
@@ -332,13 +195,17 @@ button {
 }
 
 
-
 @media(max-width: 500px){
     .nav{
         height: 5rem;
         display: block;
         font-size: 7px;
     }
+
+    .nav .left-nav .logo img{
+        height: 2rem;
+    }
+
     .right-nav{
         display: none;
     }
@@ -366,12 +233,6 @@ button {
     .right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
         margin-left: 0;
         margin-bottom: 1rem;
-    }
-
-    .slide{
-        min-width: 100%;
-        margin: 0;
-
     }
 
     .box-1 {
@@ -411,31 +272,31 @@ button {
         padding: 10px;
         text-align: center;
     }
-    .providers .provider{
-        margin: 0;
-        padding: .5rem;
+
+    .box-1 .box-1-2 .calculator{
+        display: block;
     }
 
-    .heading{
-        font-size: 10px;
-    }
-
-    .heading .line{
-        margin-top: 10px;
+    .box-1 .box-1-2 .sliders, .emi{
+        width: 100%;
     }
 
     .footer{
         font-size: 12px;
     }
+
+    .box-1 .box-1-2 .emi{
+        height: 5rem;
+    }
+
+    input[type="range"] {
+        width: 150px;
+    }
 }
 
 
 /* Media Query for Tablet-sized Screens */
-@media (min-width: 501px) and (max-width: 1024px) {
-    .slide {
-        min-width: calc(50% - 10px); /* Adjust to fit 2 images with margin */
-        margin: 0 5px; /* Margin between images */
-    }
+@media (min-width: 501px) and (max-width: 1031px) {
     .nav{
         height: 3.5rem;
     }
@@ -445,5 +306,31 @@ button {
 
     .nav .right-nav .notification i{
         font-size: 1.5rem;
+    }
+
+    .box-1-1{
+        flex: 1;
+    }
+
+    .box-1-2{
+        flex: 2;
+    }
+
+    .box-1 .box-1-2 .sliders, .emi{
+        width: 100%;
+        margin: 2rem;
+        margin-right: 3rem;
+    }
+
+    .box-1 .box-1-2 .calculator{
+        display: block;
+    }
+
+    input[type="range"] {
+        width: 300px;
+    }
+
+    .box-1 .box-1-2 .emi{
+        height: 5rem;
     }
 }
