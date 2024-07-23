@@ -30,7 +30,16 @@ app.get("/home", (req, res)=>{
 //to render emi calculator
 app.get("/emiCalculator", (req, res)=>{
     res.render("emiCalculator.ejs");
-})
+});
+
+//to render eligibility calculator
+app.get("/eligibilityCalc", (req, res)=>{
+    res.render("eligibilityCalc.ejs");
+});
+
+app.get("/login-register", (req, res)=>{
+    res.render("login-register.ejs");
+});
 
 app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);

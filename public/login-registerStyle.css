@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    background-color: #061A40;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav .logo {
+    margin-right: 10px; /* Optional: spacing between logo and company name */
+}
+
+.right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
+    margin-left: 10px; /* Optional: spacing between the icons */
+}
+
+
+.nav .left-nav .logo img{
+    height: 3rem;
+    margin: .5rem 0 .5rem 0;
+}
+
+.nav .left-nav .company-name h1{
+    color: #ffffff;
+    margin-top: .5rem;
+}
+
+.nav .right-nav .user i{
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.7rem 0 0.5rem 0;
+}
+.nav .right-nav .notification i{
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.7rem 0 0.5rem 0;
+}
+
+.get-in-touch{
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+
+
+.hamburger {
+    display: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.heading{
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading h1{
+    font-family: "Playwrite BE WAL", cursive;
+    color: #1b1dc7;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.login{
+    flex: 2.5;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    border: 1px solid #5494f3;
+    background: linear-gradient(to bottom, #5494f3, #ffffff);
+    border-radius: 20px;
+}
+
+.login .user{
+    width: 20rem;
+    margin: 4rem;
+    border-radius: 10px;
+    background-color: #00246B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.login .user h2, p, .btn{
+    margin: 8px;
+}
+
+.main .btn{
+    width: 10rem;
+    height: 3rem;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.main .btn:hover{
+    transform: scale(1.1);
+}
+
+h2{
+    margin-bottom: 1rem;
+}
+
+.login .employee{
+    width: 20rem;
+    margin: 4rem;
+    border-radius: 10px;
+    background-color: #00246B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    align-items: center;
+}
+
+.register{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    border: 1px solid #5494f3;
+    background: linear-gradient(to bottom, #5494f3, #ffffff);
+    border-radius: 20px;
+}
+
+.register-box{
+    width: 20rem;
+    margin: 4rem;
+    border-radius: 10px;
+    background-color: #00246B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    align-items: center;
+}
+
+
+@media(max-width: 500px){
+    .nav{
+        height: 5rem;
+        display: block;
+        font-size: 7px;
+    }
+    .right-nav{
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        
+    }
+
+    .right-nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        background-color: #01024d6c;
+        width: 20%;
+        padding: 1rem;
+        z-index: 1;
+    }
+
+    .right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+}
+
+
+/* Media Query for Tablet-sized Screens */
+@media (min-width: 501px) and (max-width: 1024px) {
+    
+    .nav{
+        height: 3.5rem;
+    }
+    .nav .right-nav .user i{
+        font-size: 1.5rem;
+    }
+
+    .nav .right-nav .notification i{
+        font-size: 1.5rem;
+    }
+}

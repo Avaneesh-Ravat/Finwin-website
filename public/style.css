@@ -299,6 +299,8 @@ button {
     margin-top: 1rem;
     margin-left: 1rem;
     flex: 4;
+    display: flex;
+    flex-direction: column;
 }
 
 .credit-products .credit-product .content p{
@@ -316,7 +318,8 @@ button {
 }
 
 .credit-products .credit-product .content .btn{
-    margin-top: 5rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
     color: #1b1dc7;
     cursor: pointer;
 }
