@@ -41,6 +41,19 @@ app.get("/login-register", (req, res)=>{
     res.render("login-register.ejs");
 });
 
+app.get("/user-login", (req, res)=>{
+    res.render("user-login.ejs");
+});
+
+app.get("/user-register", (req, res)=>{
+    res.render("user-register.ejs");
+});
+
+app.post("/user", (req, res)=>{
+    res.send("working");
+    console.log(req.body);
+});
+
 app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);
 });
