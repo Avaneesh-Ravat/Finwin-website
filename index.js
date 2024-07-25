@@ -86,13 +86,15 @@ app.get("/login-register", (req, res)=>{
 });
 
 app.get("/user-login", (req, res)=>{
-    res.render("user-login.ejs");
+    res.render("user-login.ejs", {message: ""});
 });
 
 app.get("/user-register", (req, res)=>{
     res.render("user-register.ejs");
 });
 
+
+//register user
 app.post("/user", (req, res)=>{
     let{name, phone, email, pass, gender} = req.body;
     const user = new User({user_name: name, user_phone: phone, user_email: email, user_password: pass, user_gender: gender});
@@ -101,6 +103,35 @@ app.post("/user", (req, res)=>{
     });
     res.redirect("/home");
 });
+
+
+
+//login verification
+app.post("/login", async (req, res) => {
+    let { email, pass } = req.body;
+
+    try {
+        const user = await User.findOne({ user_email: email }).exec();
+        if (!user) {
+            // User not found
+            return res.render("user-login.ejs", { message: "Invalid email or password" });
+        }
+
+        // Compare passwords (consider using bcrypt in a real app)
+        if (user.user_password === pass) {
+            res.redirect("/home");
+        } else {
+            // Incorrect password
+            res.render("user-login.ejs", { message: "Invalid email or password" });
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Server error");
+    }
+});
+
+
+
 
 app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);

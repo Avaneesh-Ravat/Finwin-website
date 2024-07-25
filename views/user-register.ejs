@@ -43,20 +43,30 @@
         <h1>Welcome to FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
     </div>
 
-    <form method="post" action="/user" class="register-form">
+    <form method="post" action="/user" class="register-form" id="registerForm">
         <label for="name">Enter your name:</label>
         <input type="text" placeholder="Name here" id="name" name="name">
+        <div class="error" id="nameError"></div>
+        
         <label for="phone">Enter your phone no:</label>
         <div class="phone-container">
             <span class="phone-prefix">+91</span>
             <input type="number" placeholder="Phone no" id="phone" name="phone">
         </div>
+        <div class="error" id="phoneError"></div>
+        
         <label for="email">Enter your email:</label>
         <input type="text" placeholder="E-mail ID" id="email" name="email">
+        <div class="error" id="emailError"></div>
+        
         <label for="pass">Enter Password:</label>
         <input type="password" placeholder="Enter password" id="pass" name="pass">
+        <div class="error" id="passError"></div>
+        
         <label for="cnf-pass">Confirm Password:</label>
         <input type="password" placeholder="Confirm password" id="cnf-pass" name="cnfPass">
+        <div class="error" id="cnfPassError"></div>
+        
         <label>Select your gender:</label>
         <div class="btn-gender">
             <input type="radio" id="male" name="gender" value="male">
@@ -66,10 +76,13 @@
             <input type="radio" id="female" name="gender" value="female">
             <label for="female">Female</label>
         </div>
+        <div class="error" id="genderError"></div>
+        
         <div class="btns">
-            <button>Register</button>
+            <button type="submit">Register</button>
             <button type="button">Already registered</button>
         </div>
     </form>
+    <script src="register.js"></script>
 </body>
 </html>

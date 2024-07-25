@@ -11,21 +11,31 @@ hamburger.addEventListener('click', () => {
     rightNav.classList.toggle('show');
 });
 
-// Clone the first 4 slides and append them to the end
-for (let i = 0; i < 10; i++) {
+//user icon functionality
+function toggleBox() {
+    const box = document.getElementById('box');
+    if (box.style.display === 'block') {
+        box.style.display = 'none';
+    } else {
+        box.style.display = 'block';
+    }
+}
+
+// Clone the slides and append them to the end
+for (let i = 0; i < 3; i++) {
     const clone = slides[i].cloneNode(true);
     sliderWrapper.appendChild(clone);
 }
 
-// Clone the last 4 slides and prepend them to the beginning
-for (let i = totalSlides - 4; i < totalSlides; i++) {
+// Clone the last 3 slides and prepend them to the beginning
+for (let i = totalSlides - 3; i < totalSlides; i++) {
     const clone = slides[i].cloneNode(true);
     sliderWrapper.insertBefore(clone, slides[0]);
 }
 
 // Adjust initial position
-currentIndex = 4;
-sliderWrapper.style.transform = `translateX(-${currentIndex * (25 + 2.5)}%)`;
+currentIndex = 3;
+updateSliderPosition();
 
 document.querySelector('.next').addEventListener('click', () => {
     moveToNextSlide();
@@ -38,10 +48,10 @@ document.querySelector('.prev').addEventListener('click', () => {
 function moveToNextSlide() {
     currentIndex++;
     updateSliderPosition();
-    if (currentIndex === totalSlides + 4) {
+    if (currentIndex === totalSlides + 3) {
         setTimeout(() => {
             sliderWrapper.style.transition = 'none';
-            currentIndex = 4;
+            currentIndex = 3;
             updateSliderPosition();
             setTimeout(() => {
                 sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
@@ -53,10 +63,10 @@ function moveToNextSlide() {
 function moveToPrevSlide() {
     currentIndex--;
     updateSliderPosition();
-    if (currentIndex === 3) {
+    if (currentIndex === 2) {
         setTimeout(() => {
             sliderWrapper.style.transition = 'none';
-            currentIndex = totalSlides + 3;
+            currentIndex = totalSlides + 2;
             updateSliderPosition();
             setTimeout(() => {
                 sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
@@ -66,7 +76,6 @@ function moveToPrevSlide() {
 }
 
 function updateSliderPosition() {
-    
     const slideWidth = document.querySelector('.slide').offsetWidth;
     sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
