@@ -73,13 +73,13 @@ a{
     display: none;
     width: 15rem;
     height: 100vh;
-    z-index: 1;
+    z-index: 10;
     background-color: #061a40b8;
     border: 2px solid #007bff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 3rem;
+    position: fixed;
+    top: 0;
     right: 0;
     /* transform: translate(-50%, -50%); */
     
@@ -127,6 +127,53 @@ a{
 }
 
 
+.popup{
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 450px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    border-radius: 4%;
+    font-family: "Poppins", sans-serif;
+    border: 2px solid #c5c5c5;
+    box-shadow: 0 0 10px grey;
+}
+
+.popup h2, .popup p{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.popup button{
+    position: absolute; /* Position the button absolutely within the .popup */
+    top: 20px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: transparent;
+    font-size: 30px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup .img{
+    display: flex;
+    justify-content: center;
+}
+
+.popup .img img{
+    width: 50%;
+}
+
 .slider{
     display: flex;
     justify-content: center;
@@ -159,7 +206,7 @@ a{
     display: block;
 }
 
-button {
+.slider-btns button {
     position: absolute;
     top: 35%;
     transform: translateY(-50%);
@@ -333,6 +380,88 @@ button {
 .box-2-wrapper .swiper-slide-button{
     color: #ffffff;
     background: #434141c5;
+}
+
+
+/* form open styles */
+.form-access {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.form-access .form-content h1{
+    color: #ffffff;
+    text-align: center;
+    margin: 4px;
+}
+
+.form-content {
+    background: linear-gradient(to bottom, #01024d, #1b1dc7);
+    margin: 4% 10% 10% ;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 1rem;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.data-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30rem;
+    background-color: #ffffff;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem; 
+    box-shadow: 0 0 10px grey;
+}
+
+.data-form label{
+    font-weight: 600;
+    font-size: large;
+    margin-top: 1rem;
+}
+
+.data-form input{
+    height: 2rem;
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: 2px;
+}
+
+.data-form .profession{
+    display: flex;
+}
+
+.data-form .profession input[type="radio"] {
+    margin-right: 0.5rem;
+    transform: translateY(5px);
 }
 
 /* box-3 credit products---------------------------------------------------------------------------------- */

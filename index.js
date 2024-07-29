@@ -64,13 +64,6 @@ app.get("/", (req, res)=>{
 
 
 
-//to render home page
-
-app.get("/home", (req, res)=>{
-    res.render("home.ejs");
-});
-
-
 //to render emi calculator
 app.get("/emiCalculator", (req, res)=>{
     res.render("emiCalculator.ejs");
@@ -119,7 +112,7 @@ app.post("/login", async (req, res) => {
 
         // Compare passwords (consider using bcrypt in a real app)
         if (user.user_password === pass) {
-            res.redirect("/home");
+            res.render("home.ejs", {name: user.user_name});
         } else {
             // Incorrect password
             res.render("user-login.ejs", { message: "Invalid email or password" });
@@ -129,8 +122,6 @@ app.post("/login", async (req, res) => {
         res.status(500).send("Server error");
     }
 });
-
-
 
 
 app.listen(port, ()=>{
