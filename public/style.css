@@ -355,6 +355,8 @@ a{
     transition: transform 0.5s ease-in-out;
 }
 
+
+
 .providers .provider:hover{
     transform: scale(1.1);
 }
@@ -412,6 +414,13 @@ a{
     border-radius: 1rem;
 }
 
+.data-form button{
+    width: 4rem;
+    height: 2rem;
+    background-color: #007bff;
+    color: #ffffff;
+    margin-top: .5rem;
+}
 
 .close {
     color: #aaa;

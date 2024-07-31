@@ -102,24 +102,26 @@
             <div class="form-content">
                 <h1>Fill the form to continue...</h1>
                 <span id="close" class="close">&times;</span>
-                <form action="" class="data-form" id="userform">
+                <form action="/store-data" method="post" class="data-form" id="userform">
                     <label for="name">Name:</label>
-                    <input type="text" placeholder="Enter your name" id="name">
+                    <input type="text" placeholder="Enter your name" id="name" name="name" required>
+    
                     <label for="email">Email:</label>
-                    <input type="email" placeholder="Enter your email" id="email">
+                    <input type="email" placeholder="Enter your email" id="email" name="email" required>
+    
                     <label for="phone">Phone no:</label>
-                    <input type="text" placeholder="Enter Your Phone no" id="phone">
+                    <input type="text" placeholder="Enter Your Phone no" id="phone" name="phone" required>
+    
                     <label>Select your profession:</label>
                     <div class="profession">
-                        
-                        <input type="radio" name="profession" id="salaried" value="Salaried">
-                        <label for="salalried">Salaried</label>
+                        <input type="radio" name="profession" id="salaried" value="Salaried" required>
+                        <label for="salaried">Salaried</label>
                     </div>
                     <div class="profession">
-
-                        <input type="radio" name="profession" id="self-employed" value="SelfEmployed">
+                        <input type="radio" name="profession" id="self-employed" value="SelfEmployed" required>
                         <label for="self-employed">Self Employed</label>
                     </div>
+    
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -137,73 +139,73 @@
 
                     <div class="provider swiper-slide">
                         <img src="images/central-bank.png" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/bank-of-maharashtra.png" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/indian-bank.webp" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/SBI.jpg" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/hdfc-bank.webp" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/IDBI.avif" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/Axis-bank.jpg" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/bajaj-bank.jpg" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/adhar.png" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/pnb.png" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/DMIHF.webp" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>
                     <div class="provider swiper-slide">
                         <img src="images/shubham.avif" alt="bank image" class="bank-image">
-                        <a href="/emiCalculator" class="bank-plans" data-url="/emiCalculator"><div class="view-btn">
+                        <a href="/emiCalculator" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
                         </div></a>
                     </div>

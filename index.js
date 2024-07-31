@@ -54,8 +54,28 @@ const userSchema = new mongoose.Schema({
 
 });
 
-const User = mongoose.model("User", userSchema);
+const visitorSchema = new mongoose.Schema({
+    user_name:{
+        type: String,
+        required: true,
+    },
+    user_phone:{
+        type: Number,
+        required: true,
+    },
+    user_email:{
+        type: String,
+        required: true,
+    },
+    user_profession:{
+        type: String,
+        required: true,
+    }
 
+});
+
+const User = mongoose.model("User", userSchema);
+const Visitor = mongoose.model("Visitor", visitorSchema)
 
 //to render index page
 app.get("/", (req, res)=>{
@@ -122,6 +142,32 @@ app.post("/login", async (req, res) => {
         res.status(500).send("Server error");
     }
 });
+
+
+// storing the user data without login
+app.post('/store-data', async (req, res) => {
+    console.log(req.body); // Output the form data to the console
+    let {name, email, phone, profession} = req.body;
+    try{
+        const user = await Visitor.findOne({ user_email: email }).exec();
+        if(!user){
+            const newUser = new Visitor({user_name: name, user_phone: phone, user_email: email, user_profession: profession});
+            newUser.save().then((res)=>{
+                console.log(res);
+            });
+        }
+        else{
+            res.redirect("/");
+        }
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).send("Server error");
+    }
+    res.redirect("/");
+});
+
+
 
 
 app.listen(port, ()=>{

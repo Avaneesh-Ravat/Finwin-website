@@ -150,49 +150,46 @@ document.querySelector("#close").addEventListener("click", function(){
 
 
 
-//form
-// Function to handle link clicks
-function handleLinkClick(event) {
+document.addEventListener('DOMContentLoaded', () => {
+    const formContainer = document.getElementById('form-access');
+    const links = document.querySelectorAll('.provider a');
+
+    let redirectLink = null;
+
     if (!sessionStorage.getItem('formSubmitted')) {
-        event.preventDefault();
-        // Show the form if it has not been submitted yet
-        document.getElementById('form-access').style.display = 'block';
-        // Store the URL for redirection
-        document.getElementById('form-access').setAttribute('data-redirect-url', event.currentTarget.getAttribute('data-url'));
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                redirectLink = link.getAttribute('data-link'); // Store the link to redirect after form submission
+                formContainer.style.display = 'block';
+            });
+        });
     } else {
-        // Allow the default link action if the form has been submitted
-        window.location.href = event.currentTarget.getAttribute('data-url');
+        // Activate links if form has already been submitted
+        activateLinks();
     }
-}
 
-// Add click event listeners to all links
-document.querySelectorAll('.bank-plans').forEach(link => {
-    link.addEventListener('click', handleLinkClick);
+    function activateLinks() {
+        links.forEach(link => {
+            link.style.pointerEvents = 'auto'; // Enable clicking
+            link.style.color = 'black'; // Reset color to default
+        });
+    }
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', () => {
+        sessionStorage.setItem('formSubmitted', 'true');
+        activateLinks();
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default form submission
+        form.submit(); // Actually submit the form
+        if (redirectLink) {
+            window.location.href = redirectLink; // Redirect to the stored link after form submission
+        }
+    });
 });
 
-// Handle form submission
-document.getElementById('form-access').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // Mark the form as submitted in session storage
-    sessionStorage.setItem('formSubmitted', 'true');
-    // Hide the form
-    this.style.display = 'none';
-    // Redirect to the stored URL
-    const redirectUrl = this.getAttribute('data-redirect-url');
-    if (redirectUrl) {
-        window.location.href = redirectUrl;
-    }
-});
-
-// Check if the form has been submitted at page load
-if (sessionStorage.getItem('formSubmitted')) {
-    document.getElementById('form-access').style.display = 'none';
-}
-
-// form completed-----------------------------------------------------------------------------------------------------
-
-
-
-
-
+// form completed---------------------------------------------------------------------------------------
 
