@@ -28,6 +28,8 @@ app.use(express.urlencoded({extended: true})); // parse post request data
 app.use(express.json()); // to handle json data
 
 
+let Thebankey = mongoose.connection;
+
 
 //Schema for registration
 const userSchema = new mongoose.Schema({
@@ -157,17 +159,31 @@ app.post('/store-data', async (req, res) => {
             });
         }
         else{
-            res.redirect("/");
+            return res.redirect("/");
         }
     }
     catch(err){
         console.log(err);
-        res.status(500).send("Server error");
+        return res.status(500).send("Server error");
     }
     res.redirect("/");
 });
 
 
+app.get("/bank-pages/:bank_name", (req, res) => { 
+    let { bank_name } = req.params;
+    
+    Thebankey.once('open', () => {
+        const collection = Thebankey.collection('banks');
+        collection.find({}).toArray((err, documents) => {
+            if (err) {
+                res.status(500).send('Error fetching data');
+            }
+            console.log(documents); // Optional: You can log the documents for debugging
+            res.render("bank-pages.ejs", { bank_name });
+        });
+    });
+});
 
 
 app.listen(port, ()=>{

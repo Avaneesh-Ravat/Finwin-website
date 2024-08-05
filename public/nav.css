@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    all: unset;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    background-color: #061A40;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav .logo {
+    margin-right: 10px; /* Optional: spacing between logo and company name */
+}
+
+.right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
+    margin-left: 10px; /* Optional: spacing between the icons */
+}
+
+
+.nav .left-nav .logo img{
+    height: 3rem;
+    margin: .5rem 0 .5rem 0;
+}
+
+.nav .left-nav .company-name h1{
+    color: #ffffff;
+    margin-top: .5rem;
+}
+
+.nav .right-nav .user i{
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.7rem 0 0.5rem 0;
+}
+.nav .right-nav .notification i{
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0.7rem 0 0.5rem 0;
+}
+
+.get-in-touch, .signup-register{
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+/* nav user icon functionalities */
+.icon-container {
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.box {
+    display: none;
+    width: 15rem;
+    height: 100vh;
+    z-index: 10;
+    background-color: #061a40b8;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+    
+    box-sizing: border-box;
+}
+
+.close-btn {
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box h2 {
+    color: #ffffff;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.box .user-options{
+    height: 3rem;
+    width: 100%;
+    color: #01024d;
+    padding: 1rem;
+    margin-bottom: 2px;
+    background-color: #ffffff9b;
+    cursor: pointer;
+}
+
+
+.hamburger {
+    display: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+}
