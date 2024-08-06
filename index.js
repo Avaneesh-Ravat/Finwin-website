@@ -189,7 +189,7 @@ app.get("/bank-pages/:bank_name", async (req, res) => {
         console.log(`Data found for ${bank_name}:`, data);
         
         // Render a view or send data back based on your requirements
-        res.render("bank-pages.ejs", { bankData: data });
+        res.render("bank-pages.ejs", { bankData: data[0] });
     } catch (err) {
         console.error(`Error fetching data for ${bank_name}:`, err);
         res.status(500).send("Server error");

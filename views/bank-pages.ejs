@@ -6,6 +6,7 @@
     <title>Bank-plan</title>
     <link rel="icon" type="image/x-icon" href="/logo.png">
     <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/bank-pagesStyle.css">
 </head>
 <body>
     <div class="nav">
@@ -28,8 +29,25 @@
         </div>
     </div>
     <div class="box">
-        <h1></h1>
+        <h1><%=bankData.loan_name%></h1>
+        <h2>Eligibility</h2>
+        <ul>
+            <li>Individual over 18 years of age with steady source of income.</li>
+        </ul>
+        <h2>Rate of Interest</h2>
+        <ul>
+            <li><%=bankData.rate_of_interest%></li>
+        </ul>
+        <h2>Max loan tenure</h2>
+        <ul>
+            <li><%=bankData.loan_name%> provides the max loan tenure of <%=bankData.max_loan_tenure%> years.</li>
+        </ul>
+        <div class="btn">
+            Get a conversation on call
+        </div>
     </div>
+
+    
     
 </body>
 </html>
