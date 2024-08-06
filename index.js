@@ -28,7 +28,6 @@ app.use(express.urlencoded({extended: true})); // parse post request data
 app.use(express.json()); // to handle json data
 
 
-let Thebankey = mongoose.connection;
 
 
 //Schema for registration
@@ -170,20 +169,33 @@ app.post('/store-data', async (req, res) => {
 });
 
 
-app.get("/bank-pages/:bank_name", (req, res) => { 
+app.get("/bank-pages/:bank_name", async (req, res) => { 
     let { bank_name } = req.params;
-    
-    Thebankey.once('open', () => {
-        const collection = Thebankey.collection('banks');
-        collection.find({}).toArray((err, documents) => {
-            if (err) {
-                res.status(500).send('Error fetching data');
-            }
-            console.log(documents); // Optional: You can log the documents for debugging
-            res.render("bank-pages.ejs", { bank_name });
-        });
-    });
+
+    try {
+        console.log(`Fetching data for bank: ${bank_name}`);
+
+        // Access the 'banks' collection
+        const collection = mongoose.connection.db.collection('banks');
+        
+        // Querying the collection based on bank_name
+        const data = await collection.find({ bank_name: bank_name }).toArray();
+
+        if (data.length === 0) {   
+            console.log(`No data found for bank: ${bank_name}`);
+            return res.status(404).send(`No data found for ${bank_name}`);
+        }
+
+        console.log(`Data found for ${bank_name}:`, data);
+        
+        // Render a view or send data back based on your requirements
+        res.render("bank-pages.ejs", { bankData: data });
+    } catch (err) {
+        console.error(`Error fetching data for ${bank_name}:`, err);
+        res.status(500).send("Server error");
+    }
 });
+
 
 
 app.listen(port, ()=>{
