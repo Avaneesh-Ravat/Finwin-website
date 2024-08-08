@@ -104,8 +104,14 @@ a{
 
 .box h2 {
     color: #ffffff;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
     text-align: center;
+}
+
+.box p{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .box .user-options{
@@ -431,7 +437,7 @@ a{
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: rgb(126, 125, 125);
     text-decoration: none;
     cursor: pointer;
 }

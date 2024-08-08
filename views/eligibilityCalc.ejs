@@ -20,9 +20,21 @@
                     <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
                 </div>
             </div>
+            
             <div class="right-nav">
                 <div class="user">
-                    <i class="fa-regular fa-user"></i>
+                    <div class="icon-container" onclick="toggleBox()">
+                        <div class="icon"><i class="fa-regular fa-user"></i></div>
+                    </div>
+                    <div id="box" class="box">
+                        <button class="close-btn" onclick="toggleBox()">X</button>
+                        <h2><%= //user.user_name %></h2>
+                        <p><%= //user.user_email %></p>
+                        <div class="user-options">Account</div>
+                        <div class="user-options">Application Status</div>
+                        <div class="user-options">Notification</div>
+                        <div class="user-options">Log out</div>
+                    </div>
                 </div>
                 <div class="notification">
                     <i class="fa-solid fa-bell"></i>

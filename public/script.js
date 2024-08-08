@@ -148,6 +148,10 @@ document.querySelector("#close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
 });
 
+document.querySelector(".close-form").addEventListener("click", function(){
+    document.querySelector(".form-access").style.display = "none";
+})
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

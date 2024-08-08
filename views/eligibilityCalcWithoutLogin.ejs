@@ -20,13 +20,13 @@
                     <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
                 </div>
             </div>
+            
             <div class="right-nav">
-                <div class="user">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-                <div class="notification">
-                    <i class="fa-solid fa-bell"></i>
-                </div>
+                <a href="/login-register">
+                    <div class="signup-register">
+                        <h3>Sign in</h3>
+                    </div>
+                </a>
                 <div class="get-in-touch">
                     <h3>Get in touch</h3>
                 </div>
@@ -36,14 +36,15 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
+    
         <div class="content">
             <div class="main">
                 <div class="box-1">
                     <div class="box-1-1">
                         <div class="menu">
-                            <div class="option"><a href="/home">Home</a></div>
-                            <div class="option"><a href="/eligibilitycalc">Loan Eligibility</a></div>
-                            <div class="option" id="current">EMI Calculator</a></div>
+                            <div class="option"><a href="/">Home</a></div>
+                            <div class="option" id="current">Home Loan Eligibility</div>
+                            <div class="option"><a href="/emiCalcWithoutLogin">EMI Calculator</a></div>
                             <div class="option">Interest rates</div>
                             <div class="option">About us</div>
                             <div class="option">More</div>
@@ -53,27 +54,33 @@
                         </div>
                     </div>
                     <div class="box-1-2">
-                        <div class="heading"><h1>EMI Calculator</h1></div>
+                        <div class="heading"><h1>Home Loan Eligibilty Calculator</h1></div>
                         <div class="calculator">
                             <div class="sliders">
                                 <div>
-                                    <label for="amount">Loan Amount (₹):</label>
-                                    <input type="range" id="amount" min="500000" max="50000000" step="100000" value="5000000" oninput="updateAmount(this.value)">
-                                    <span id="amountValue">₹5,000,000</span>
+                                    <label for="income">Gross Income Monthly (₹):</label>
+                                    <input type="range" id="income" min="10000" max="10000000" step="1" value="500000" oninput="updateIncome(this.value)">
+                                    <input type="number" id="incomeInput" class="manualInput" value="500000" oninput="updateIncome(this.value)">
                                 </div>
                                 <div>
                                     <label for="interest">Interest Rate (%):</label>
-                                    <input type="range" id="interest" min="0" max="50" step="0.01" value="7.5" oninput="updateInterest(this.value)">
-                                    <span id="interestValue">7.50%</span>
+                                    <input type="range" id="interest" min="0.5" max="15" step="0.01" value="7.5" oninput="updateInterest(this.value)">
+                                    <input type="number" id="interestInput" class="manualInput" value="7.5" step="0.01" oninput="updateInterest(this.value)">
                                 </div>
                                 <div>
-                                    <label for="years">Loan Term (years):</label>
-                                    <input type="range" id="years" min="1" max="50" step="1" value="20" oninput="updateYears(this.value)">
-                                    <span id="yearsValue">20 years</span>
+                                    <label for="tenure">Tenure (years):</label>
+                                    <input type="range" id="tenure" min="1" max="30" step="1" value="20" oninput="updateTenure(this.value)">
+                                    <input type="number" id="tenureInput" class="manualInput" value="20" oninput="updateTenure(this.value)">
+                                </div>
+                                <div>
+                                    <label for="otherEmi">Other EMIs Monthly (₹):</label>
+                                    <input type="range" id="otherEmi" min="0" max="10000000" step="1" value="0" oninput="updateOtherEmi(this.value)">
+                                    <input type="number" id="otherEmiInput" class="manualInput" value="0" oninput="updateOtherEmi(this.value)">
                                 </div>
                             </div>
-                            <div class="emi">
-                                <h2>Monthly EMI: <span id="emiValue">₹0</span></h2>
+                            <div class="results">
+                                <h2>Loan Amount You Can Avail: <span id="loanAmount">₹0</span></h2>
+                                <h2>Monthly EMI: <span id="emiAmount">₹0</span></h2>
                             </div>
                         </div>
                     </div>
@@ -99,6 +106,6 @@
             </div>
         </div>
     </div>
-    <script src="emiScript.js"></script>
+    <script src="eligibilityScript.js"></script>
 </body>
 </html>

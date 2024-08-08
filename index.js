@@ -83,6 +83,10 @@ app.get("/", (req, res)=>{
     res.render("index.ejs");
 })
 
+//to render home page when user is log in
+app.get("/home/:email", (req, res)=>{
+    res.render("home.ejs");
+})
 
 
 //to render emi calculator
@@ -90,9 +94,19 @@ app.get("/emiCalculator", (req, res)=>{
     res.render("emiCalculator.ejs");
 });
 
+app.get("/emiCalcWithoutLogin", (req, res)=>{
+    res.render("emiCalcWithoutLogin.ejs");
+})
+
 //to render eligibility calculator
 app.get("/eligibilityCalc", (req, res)=>{
+    let {q} = req.query;
+    console.log(q);
     res.render("eligibilityCalc.ejs");
+});
+
+app.get("/eligibilityCalcWithoutLogin", (req, res)=>{
+    res.render("eligibilityCalcWithoutLogin.ejs");
 });
 
 app.get("/login-register", (req, res)=>{
@@ -115,7 +129,7 @@ app.post("/user", (req, res)=>{
     user.save().then((res)=>{
         console.log(res);
     });
-    res.redirect("/home");
+    res.render("home.ejs", {name: name});
 });
 
 
@@ -133,7 +147,7 @@ app.post("/login", async (req, res) => {
 
         // Compare passwords (consider using bcrypt in a real app)
         if (user.user_password === pass) {
-            res.render("home.ejs", {name: user.user_name});
+            res.render("home.ejs", {user});
         } else {
             // Incorrect password
             res.render("user-login.ejs", { message: "Invalid email or password" });
@@ -182,7 +196,7 @@ app.get("/bank-pages/:bank_name", async (req, res) => {
         const data = await collection.find({ bank_name: bank_name }).toArray();
 
         if (data.length === 0) {   
-            console.log(`No data found for bank: ${bank_name}`);
+            console.log(`No da4 ta found for bank: ${bank_name}`);
             return res.status(404).send(`No data found for ${bank_name}`);
         }
 

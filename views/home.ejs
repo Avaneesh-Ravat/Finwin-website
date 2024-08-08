@@ -28,7 +28,8 @@
                 </div>
                 <div id="box" class="box">
                     <button class="close-btn" onclick="toggleBox()">X</button>
-                    <h2><%= name %></h2>
+                    <h2><%= user.user_name %></h2>
+                    <p><%= user.user_email %></p>
                     <div class="user-options">Account</div>
                     <div class="user-options">Application Status</div>
                     <div class="user-options">Notification</div>
@@ -84,7 +85,7 @@
             <div class="box-1-1">
                 <div class="menu">
                     <div class="option" id="current">Home</div>
-                    <div class="option"><a href="/eligibilitycalc">Loan Eligibility</a></div>
+                    <div class="option"><a href="/eligibilitycalc?q=<%= user.user_email %>">Loan Eligibility</a></div>
                     <div class="option"><a href="/emiCalculator">Calculator</a></div>
                     <div class="option">Interest rates</div>
                     <div class="option">About us</div>
@@ -94,7 +95,7 @@
                     <h1>Image here</h1>
                 </div>
             </div>
-            <div class="box-1-2">
+            <div class="box-1-2">  
                 <div class="offer">
                     <h1>What we offer</h1>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi architecto, est voluptates reiciendis quam quod quas exercitationem iure, esse laborum repudiandae eveniet explicabo corrupti voluptatum illo dolorum eum nemo! Magnam asperiores numquam ipsam, eius possimus ad ipsum sunt officia saepe excepturi cumque corporis sed tenetur culpa quasi alias commodi. Maiores consequatur tempore vel error impedit laudantium fugiat recusandae hic enim nesciunt fuga explicabo voluptatibus quod, atque repudiandae consectetur aliquam iste eaque aliquid. Aut eaque natus, voluptatum illo fugit nesciunt quisquam saepe repellat, iste inventore libero excepturi corrupti fugiat ad earum iure voluptas cum placeat minima sunt illum officiis rem consequatur!</p>

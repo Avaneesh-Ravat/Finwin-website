@@ -49,12 +49,12 @@
     margin: 0.7rem 0 0.5rem 0;
 }
 
-.get-in-touch{
+.get-in-touch, .signup-register{
     background-color: #ffffff;
     border-radius: 1rem;
     padding: 0.5rem;
+    cursor: pointer;
 }
-
 
 
 .hamburger {
@@ -64,6 +64,9 @@
     cursor: pointer;
 }
 
+a{
+    all: unset;
+}
 
 
 
