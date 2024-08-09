@@ -42,6 +42,7 @@
     color: #ffffff;
     font-size: 2rem;
     margin: 0.7rem 0 0.5rem 0;
+    cursor: pointer;
 }
 .nav .right-nav .notification i{
     color: #ffffff;
@@ -63,6 +64,62 @@
     font-size: 2rem;
     cursor: pointer;
 }
+
+.box {
+    display: none;
+    width: 15rem;
+    height: 100vh;
+    z-index: 10;
+    background-color: #061a40b8;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+    
+    box-sizing: border-box;
+}
+
+.close-btn {
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box h2 {
+    color: #ffffff;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+.box p{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.box .user-options{
+    height: 3rem;
+    width: 100%;
+    color: #01024d;
+    padding: 1rem;
+    margin-bottom: 2px;
+    background-color: #ffffff9b;
+    cursor: pointer;
+}
+
 
 a{
     all: unset;

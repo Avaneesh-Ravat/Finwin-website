@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finwin</title>
     <link rel="icon" type="image/x-icon" href="/logo.png">
-    <link rel="stylesheet" href="emi-eligibilityStyle.css">
+    <link rel="stylesheet" href="/emi-eligibilityStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
 </head>
 <body>
     <div class="container">
         <div class="nav">
             <div class="left-nav">
                 <div class="logo">
-                    <img src="logo.png" alt="no-logo">
+                    <img src="/logo.png" alt="no-logo">
                 </div>
                 <div class="company-name">
                     <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
@@ -28,8 +28,8 @@
                     </div>
                     <div id="box" class="box">
                         <button class="close-btn" onclick="toggleBox()">X</button>
-                        <h2><%= //user.user_name %></h2>
-                        <p><%= //user.user_email %></p>
+                        <h2><%= user.user_name %></h2>
+                        <p><%= user.user_email %></p>
                         <div class="user-options">Account</div>
                         <div class="user-options">Application Status</div>
                         <div class="user-options">Notification</div>
@@ -53,9 +53,9 @@
                 <div class="box-1">
                     <div class="box-1-1">
                         <div class="menu">
-                            <div class="option"><a href="/home">Home</a></div>
+                            <div class="option"><a href="/home/<%= user.id %>">Home</a></div>
                             <div class="option" id="current">Home Loan Eligibility</div>
-                            <div class="option"><a href="/emiCalculator">EMI Calculator</a></div>
+                            <div class="option"><a href="/emiCalculator/<%= user.id %>">Calculator</a></div>
                             <div class="option">Interest rates</div>
                             <div class="option">About us</div>
                             <div class="option">More</div>
@@ -117,6 +117,7 @@
             </div>
         </div>
     </div>
-    <script src="eligibilityScript.js"></script>
+    <script src="/eligibilityScript.js"></script>
+    <script src="/user-account.js"></script>
 </body>
 </html>

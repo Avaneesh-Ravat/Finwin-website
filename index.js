@@ -84,14 +84,34 @@ app.get("/", (req, res)=>{
 })
 
 //to render home page when user is log in
-app.get("/home/:email", (req, res)=>{
-    res.render("home.ejs");
+app.get("/home/:id", async(req, res)=>{
+    let {id} = req.params;
+    try {
+        const user = await User.findOne({ _id: id }).exec();
+        console.log(user);
+        res.render("home.ejs", {user});
+        
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Server error");
+    }
+    console.log(id);
 })
 
 
 //to render emi calculator
-app.get("/emiCalculator", (req, res)=>{
-    res.render("emiCalculator.ejs");
+app.get("/emiCalculator/:id", async(req, res)=>{
+    let {id} = req.params;
+    try {
+        const user = await User.findOne({ _id: id }).exec();
+        console.log(user);
+        res.render("emiCalculator.ejs", {user});
+        
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Server error");
+    }
+    console.log(id);
 });
 
 app.get("/emiCalcWithoutLogin", (req, res)=>{
@@ -99,10 +119,18 @@ app.get("/emiCalcWithoutLogin", (req, res)=>{
 })
 
 //to render eligibility calculator
-app.get("/eligibilityCalc", (req, res)=>{
-    let {q} = req.query;
-    console.log(q);
-    res.render("eligibilityCalc.ejs");
+app.get("/eligibilitycalc/:id", async(req, res)=>{
+    let {id} = req.params;
+    try {
+        const user = await User.findOne({ _id: id }).exec();
+        console.log(user);
+        res.render("eligibilityCalc.ejs", {user});
+        
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Server error");
+    }
+    console.log(id);
 });
 
 app.get("/eligibilityCalcWithoutLogin", (req, res)=>{

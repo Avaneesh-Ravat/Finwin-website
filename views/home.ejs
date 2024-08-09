@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finwin</title>
     <link rel="icon" type="image/x-icon" href="/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <!-- Link swiper js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,7 @@
     <div class="nav">
         <div class="left-nav">
             <div class="logo">
-                <img src="logo.png" alt="no-logo">
+                <img src="/logo.png" alt="no-logo">
             </div>
             <div class="company-name">
                 <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
@@ -61,32 +61,32 @@
     <div class="slider">
         <div class="slider-container">
             <div class="slider-wrapper">
-                <div class="slide"><img src="images/image1.webp" alt="Image 1"></div>
-                <div class="slide"><img src="images/image3.jpg" alt="Image 3"></div>
-                <div class="slide"><img src="images/image5.jpg" alt="Image 5"></div>
-                <div class="slide"><img src="images/image9.jpg" alt="Image 9"></div>
-                <div class="slide"><img src="images/image10.jpg" alt="Image 10"></div>
-                <div class="slide"><img src="images/image1.webp" alt="Image 1"></div>
-                <div class="slide"><img src="images/image3.jpg" alt="Image 3"></div>
-                <div class="slide"><img src="images/image5.jpg" alt="Image 5"></div>
-                <div class="slide"><img src="images/image9.jpg" alt="Image 9"></div>
-                <div class="slide"><img src="images/image10.jpg" alt="Image 10"></div>
+                <div class="slide"><img src="/images/image3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="/images/image5.jpg" alt="Image 5"></div>
+                <div class="slide"><img src="/images/image1.webp" alt="Image 1"></div>
+                <div class="slide"><img src="/images/image9.jpg" alt="Image 9"></div>
+                <div class="slide"><img src="/images/image10.jpg" alt="Image 10"></div>
+                <div class="slide"><img src="/images/image1.webp" alt="Image 1"></div>
+                <div class="slide"><img src="/images/image3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="/images/image5.jpg" alt="Image 5"></div>
+                <div class="slide"><img src="/images/image9.jpg" alt="Image 9"></div>
+                <div class="slide"><img src="/images/image10.jpg" alt="Image 10"></div>
             </div>
         </div>
     </div>
     
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-
-
+    <div class="slider-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
 
     <div class="main">
         <div class="box-1">
             <div class="box-1-1">
                 <div class="menu">
                     <div class="option" id="current">Home</div>
-                    <div class="option"><a href="/eligibilitycalc?q=<%= user.user_email %>">Loan Eligibility</a></div>
-                    <div class="option"><a href="/emiCalculator">Calculator</a></div>
+                    <div class="option"><a href="/eligibilitycalc/<%= user.id %>">Loan Eligibility</a></div>
+                    <div class="option"><a href="/emiCalculator/<%= user.id %>">Calculator</a></div>
                     <div class="option">Interest rates</div>
                     <div class="option">About us</div>
                     <div class="option">More</div>
@@ -127,73 +127,73 @@
                 <div class="providers swiper-wrapper">
 
                     <div class="provider swiper-slide">
-                        <img src="images/central-bank.png" alt="bank image" class="bank-image">
+                        <img src="/images/central-bank.png" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/bank-of-maharashtra.png" alt="bank image" class="bank-image">
+                        <img src="/images/bank-of-maharashtra.png" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/indian-bank.webp" alt="bank image" class="bank-image">
+                        <img src="/images/indian-bank.webp" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/SBI.jpg" alt="bank image" class="bank-image">
+                        <img src="/images/SBI.jpg" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/hdfc-bank.webp" alt="bank image" class="bank-image">
+                        <img src="/images/hdfc-bank.webp" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/IDBI.avif" alt="bank image" class="bank-image">
+                        <img src="/images/IDBI.avif" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/Axis-bank.jpg" alt="bank image" class="bank-image">
+                        <img src="/images/Axis-bank.jpg" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/bajaj-bank.jpg" alt="bank image" class="bank-image">
+                        <img src="/images/bajaj-bank.jpg" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/adhar.png" alt="bank image" class="bank-image">
+                        <img src="/images/adhar.png" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/pnb.png" alt="bank image" class="bank-image">
+                        <img src="/images/pnb.png" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/DMIHF.webp" alt="bank image" class="bank-image">
+                        <img src="/images/DMIHF.webp" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="images/shubham.avif" alt="bank image" class="bank-image">
+                        <img src="/images/shubham.avif" alt="bank image" class="bank-image">
                         <div class="view-btn">
                             <p>View Plans</p>
                         </div>
@@ -221,7 +221,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/home-loan.png" alt="symbol">
+                    <img src="/images/home-loan.png" alt="symbol">
                 </div>
             </div>
             <div class="credit-product">
@@ -233,7 +233,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/loan-against-property.png" alt="symbol">
+                    <img src="/images/loan-against-property.png" alt="symbol">
                 </div>
             </div>
             <div class="credit-product">
@@ -245,7 +245,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/transfer-home-loan.png" alt="symbol">
+                    <img src="/images/transfer-home-loan.png" alt="symbol">
                 </div>
             </div>
             <div class="credit-product">
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/personal-loan.png" alt="symbol">
+                    <img src="/images/personal-loan.png" alt="symbol">
                 </div>
             </div>
             <div class="credit-product">
@@ -269,7 +269,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/business-loan.png" alt="symbol">
+                    <img src="/images/business-loan.png" alt="symbol">
                 </div>
             </div>
             <div class="credit-product">
@@ -281,7 +281,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/transfer-personal-loan.png" alt="symbol">
+                    <img src="/images/transfer-personal-loan.png" alt="symbol">
                 </div>
             </div>
         </div>
@@ -306,6 +306,6 @@
     </div>
     <!-- Swiper js script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
