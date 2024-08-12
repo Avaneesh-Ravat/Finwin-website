@@ -224,7 +224,7 @@ app.get("/bank-pages/:bank_name", async (req, res) => {
         const data = await collection.find({ bank_name: bank_name }).toArray();
 
         if (data.length === 0) {   
-            console.log(`No da4 ta found for bank: ${bank_name}`);
+            console.log(`No data found for bank: ${bank_name}`);
             return res.status(404).send(`No data found for ${bank_name}`);
         }
 
@@ -238,6 +238,33 @@ app.get("/bank-pages/:bank_name", async (req, res) => {
     }
 });
 
+
+//to render the interest rate pages
+
+app.get("/interestRatesWithoutLogin", async (req, res) => { 
+    try {
+        console.log(`Fetching all bank data...`);
+
+        // Access the 'banks' collection
+        const collection = mongoose.connection.db.collection('banks');
+        
+        // Fetch all documents in the collection
+        const data = await collection.find({}).toArray();
+
+        if (data.length === 0) {   
+            console.log(`No data found in the banks collection.`);
+            return res.status(404).send("No data found.");
+        }
+
+        console.log(`Bank data found:`, data);
+        
+        // Render the EJS page with the array of bank data
+        res.render("interestRatesWithoutLogin.ejs", { banksData: data });
+    } catch (err) {
+        console.error(`Error fetching bank data:`, err);
+        res.status(500).send("Server error");
+    }
+});
 
 
 app.listen(port, ()=>{

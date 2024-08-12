@@ -1,0 +1,73 @@
+.table-box{
+    width: 40rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    background: linear-gradient(to bottom, #01024d, #1b1dc7, #1b74c7);
+    
+}
+
+.table-box h2{
+    text-align: center;
+    color: #ffffff;
+}
+
+.roi-table{
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: #ffffff;
+}
+
+.roi-table .table-head{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.2rem;
+    
+}
+
+.roi-table .table-head .table-head-bank{
+    flex: 2;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.roi-table .table-head .table-head-interest{
+    flex: 1;
+    padding-left: 0.5rem;
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.roi-table .table-data{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 1rem;
+    
+}
+
+.roi-table .table-data .table-data-bank{
+    flex: 2;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.roi-table .table-data .table-data-interest{
+    flex: 1;
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.roi-table .table-data .table-data-interest a{
+    padding-right: 0.5rem;
+    cursor: pointer;
+}
+
