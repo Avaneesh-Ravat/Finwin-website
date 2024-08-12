@@ -1,3 +1,63 @@
+.box-1{
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.box-1-1{
+    flex: 1;
+    margin-right: 0;
+}
+
+.box-1-2{
+    flex: 4;
+}
+
+.box-1-1 .menu{
+    width: 80%;
+    height: 20rem;
+    margin: 1rem 0 1rem 2.5rem;
+    background: linear-gradient(to bottom, #01024d, #1b1dc7);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#current{
+    background-color: #bcd7f18c;
+}
+
+.box-1-1 .image{
+    width: 80%;
+    height: 15rem;
+    background-color: #5C6C7D;
+    margin: 1rem 0 1rem 2.5rem;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.box-1 .box-1-1 .menu .option{
+    font-weight: 600;
+    color: #ffffff;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box-1 .box-1-1 .menu .option a{
+    all: unset;
+}
+
+.box-1 .box-1-1 .menu .option:hover{
+    background-color: #ffffff;
+    color: #6F2A1C;
+}
+
 .table-box{
     width: 40rem;
     border: 2px solid black;
@@ -71,3 +131,12 @@
     cursor: pointer;
 }
 
+.footer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    background-color: #0e092a;
+    color: #ffffff;
+    justify-content: space-between;
+    padding: 1rem;
+}

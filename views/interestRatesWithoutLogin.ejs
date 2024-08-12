@@ -35,26 +35,67 @@
             <i class="fa-solid fa-bars"></i>
         </div>
     </div>
-    <div class="table-box">
-        <h2>Interest rates of different banks</h2>
-        <div class="roi-table">
-            <div class="table-head">
-                <div class="table-head-bank">Name of banks</div>
-                <div class="table-head-interest">Starting rate of interest</div>
+    
+    <div class="main">
+        <div class="box-1">
+            <div class="box-1-1">
+                <div class="menu">
+                    <div class="option"><a href="/">Home</a></div>
+                    <div class="option"><a href="/eligibilityCalcWithoutLogin">Loan Eligibility</a></div>
+                    <div class="option"><a href="/emiCalcWithoutLogin">Calculator</a></div>
+                    <div class="option" id="current"><a href="/interestRatesWithoutLogin">Interest rates</a></div>
+                    <div class="option">About us</div>
+                    <div class="option">More</div>
+                </div>
+                <div class="image">
+                    <h1>Image here</h1>
+                </div>
             </div>
-            <% banksData.forEach(function(bank) { %>
+            <div class="box-1-2">
+                <div class="table-box">
+                    <h2>Interest rates of different banks</h2>
+                    <div class="roi-table">
+                        <div class="table-head">
+                            <div class="table-head-bank">Name of banks</div>
+                            <div class="table-head-interest">Starting rate of interest</div>
+                        </div>
+                        <% banksData.forEach(function(bank) { %>
 
-                <div class="table-data">
-                    <div class="table-data-bank">
-                        <%=bank.loan_name%>
-                    </div>
-                    <div class="table-data-interest">
-                        <p><%=bank.rate_of_interest.slice(0, 6)%></p>
-                        <a href="/bank-pages/<%=bank.bank_name%>">&#10095</a>
+                            <div class="table-data">
+                                <div class="table-data-bank">
+                                    <%=bank.loan_name%>
+                                </div>
+                                <div class="table-data-interest">
+                                    <p><%=bank.rate_of_interest.slice(0, 6)%></p>
+                                    <a href="/bank-pages/<%=bank.bank_name%>">&#10095</a>
+                                </div>
+                            </div>
+                        <% }); %>
                     </div>
                 </div>
-            <% }); %>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="footer">
+        <div class="foot-box">
+            <h3>About us</h3>
+            <p>Awards and recognition</p>
+            <p>Office</p>
+        </div>
+        <div class="foot-box">
+            <h3>Customer services</h3>
+            <p>Service 1</p>
+            <p>Service 2</p>
+            <p>Service 3</p>
+        </div>
+        <div class="foot-box">
+            <h3>Other</h3>
+            <p>Career Opportunities</p>
+            <p>Customer Service policy</p>
         </div>
     </div>
+    
 </body>
 </html>
