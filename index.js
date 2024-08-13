@@ -267,6 +267,11 @@ app.get("/interestRatesWithoutLogin", async (req, res) => {
 });
 
 
+//to render get in touch form
+app.get("/getInTouch", (req, res)=>{
+    res.render("getInTouch.ejs");
+});
+
 app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);
 }); 
