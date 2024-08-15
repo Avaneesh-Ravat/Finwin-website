@@ -75,8 +75,29 @@ const visitorSchema = new mongoose.Schema({
 
 });
 
+const getInTouchSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        required : true,
+    },
+    contact_no:{
+        type: String,
+        required: true,
+    },
+    email:{
+        type: String,
+        required: true,
+    },
+    message:{
+        type: String,
+        required: true,
+    }
+
+});
+
 const User = mongoose.model("User", userSchema);
-const Visitor = mongoose.model("Visitor", visitorSchema)
+const Visitor = mongoose.model("Visitor", visitorSchema);
+const GetInTouchUser = mongoose.model("GetInTouchUSer", getInTouchSchema);
 
 //to render index page
 app.get("/", (req, res)=>{
@@ -271,6 +292,10 @@ app.get("/interestRatesWithoutLogin", async (req, res) => {
 app.get("/getInTouch", (req, res)=>{
     res.render("getInTouch.ejs");
 });
+
+//get in touch data to the database
+app.get("/getIn")
+
 
 app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);
