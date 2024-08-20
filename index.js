@@ -294,7 +294,14 @@ app.get("/getInTouch", (req, res)=>{
 });
 
 //get in touch data to the database
-app.get("/getIn")
+app.post("/getInTouchData", (req, res)=>{
+    let{name, phone, email, message} = req.body;
+    const user = new GetInTouchUser({name: name, contact_no: phone, email: email, message: message});
+    user.save().then((res)=>{
+        console.log(res);
+    });
+    res.render("index.ejs");
+});
 
 
 app.listen(port, ()=>{
