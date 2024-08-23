@@ -542,7 +542,7 @@ a{
 
 
 
-@media(max-width: 500px){
+@media(max-width: 768px){
     .nav{
         height: 5rem;
         display: block;
@@ -636,13 +636,16 @@ a{
     .footer{
         font-size: 12px;
     }
+    .prev, .next{
+        display: none;
+    }
 }
 
 
 /* Media Query for Tablet-sized Screens */
-@media (min-width: 501px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .slide {
-        min-width: calc(50% - 10px); /* Adjust to fit 2 images with margin */
+        min-width: calc(70% - 10px); /* Adjust to fit 2 images with margin */
         margin: 0 5px; /* Margin between images */
     }
     .nav{

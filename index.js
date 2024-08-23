@@ -287,20 +287,52 @@ app.get("/interestRatesWithoutLogin", async (req, res) => {
     }
 });
 
+//to render about us page
+ 
+app.get("/aboutUs", (req, res)=>{
+    res.render("aboutus.ejs");
+})
+
 
 //to render get in touch form
 app.get("/getInTouch", (req, res)=>{
     res.render("getInTouch.ejs");
 });
 
+app.get("/getInTouchAfterLogin/:id", async(req, res)=>{
+    let {id} = req.params;
+    try {
+        const user = await User.findOne({ _id: id }).exec();
+        console.log(user);
+        res.render("getInTouchAfterLogin.ejs", {user});
+        
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Server error");
+    }
+    console.log(id);
+});
+
 //get in touch data to the database
-app.post("/getInTouchData", (req, res)=>{
+app.post("/getInTouchData/:page", async(req, res)=>{
+    const {page} = req.params;
     let{name, phone, email, message} = req.body;
     const user = new GetInTouchUser({name: name, contact_no: phone, email: email, message: message});
     user.save().then((res)=>{
         console.log(res);
     });
+    if(page === "indexPage")
     res.render("index.ejs");
+    else{
+        try {
+            const user = await User.findOne({ user_email: email }).exec();
+            
+            res.render("home.ejs", {user});
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Server error");
+        }
+    }
 });
 
 

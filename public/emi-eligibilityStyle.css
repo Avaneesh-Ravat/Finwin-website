@@ -360,7 +360,7 @@ input[type="range"] {
     }
 
     .box-1 .box-1-2 .emi, .results{
-        height: 5rem;
+        height: 8rem;
     }
 
     input[type="range"] {
@@ -373,6 +373,9 @@ input[type="range"] {
 @media (min-width: 501px) and (max-width: 1031px) {
     .nav{
         height: 3.5rem;
+    }
+    .nav h1{
+        font-size: 1.2rem;
     }
     .nav .right-nav .user i{
         font-size: 1.5rem;
@@ -391,7 +394,7 @@ input[type="range"] {
     }
 
     .box-1 .box-1-2 .sliders, .emi, .results{
-        width: 100%;
+        width: 30rem;
         margin: 2rem;
         margin-right: 3rem;
     }

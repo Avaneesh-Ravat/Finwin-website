@@ -1,119 +1,55 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.nav{
+.heading {
     display: flex;
-    width: 100%;
-    height: 4rem;
-    background-color: #061A40;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-}
-
-a{
-    all: unset;
-}
-
-.left-nav, .right-nav {
-    display: flex;
-    align-items: center;
-}
-
-.left-nav .logo {
-    margin-right: 10px; /* Optional: spacing between logo and company name */
-}
-
-.right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
-    margin-left: 10px; /* Optional: spacing between the icons */
-}
-
-
-.nav .left-nav .logo img{
-    height: 3rem;
-    margin: .5rem 0 .5rem 0;
-}
-
-.nav .left-nav .company-name h1{
-    color: #ffffff;
-    margin-top: .5rem;
-}
-
-.nav .right-nav .user i{
-    color: #ffffff;
-    font-size: 2rem;
-    margin: 0.7rem 0 0.5rem 0;
-}
-.nav .right-nav .notification i{
-    color: #ffffff;
-    font-size: 2rem;
-    margin: 0.7rem 0 0.5rem 0;
-}
-
-.get-in-touch{
-    background-color: #ffffff;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    cursor: pointer;
-}
-
-
-
-.hamburger {
-    display: none;
-    color: #ffffff;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.heading{
-    display: flex;
-    height: 4rem;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
 }
 
-.heading h1{
+.heading h1 {
     font-family: "Playwrite BE WAL", cursive;
     color: #1b1dc7;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.main{
+.main {
     display: flex;
     flex-direction: row;
     height: 80vh;
+    justify-content: space-around;
+    padding: 2rem;
 }
 
-.login{
-    flex: 2.5;
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem;
+.login, .register {
+    flex: 1;
+    margin: 1rem;
     border: 1px solid #5494f3;
     background: linear-gradient(to bottom, #5494f3, #ffffff);
     border-radius: 20px;
-}
-
-.login .user{
-    width: 20rem;
-    margin: 4rem;
-    border-radius: 10px;
-    background-color: #00246B;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.login .user, .login .employee, .register .register-box {
+    width: 80%;
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #00246B;
     color: #ffffff;
+    text-align: center;
 }
 
-.login .user h2, p, .btn{
-    margin: 8px;
-}
-
-.main .btn{
+.main .btn {
     width: 10rem;
     height: 3rem;
     background-color: #ffffff;
@@ -126,102 +62,57 @@ a{
     transition: transform 0.5s ease-in-out;
 }
 
-.main a{
-    all: unset;
-}
-
-.main .btn:hover{
+.main .btn:hover {
     transform: scale(1.05);
 }
 
-h2{
+h2 {
     margin-bottom: 1rem;
 }
 
-.login .employee{
-    width: 20rem;
-    margin: 4rem;
-    border-radius: 10px;
-    background-color: #00246B;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #ffffff;
-    align-items: center;
-}
-
-.register{
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem;
-    border: 1px solid #5494f3;
-    background: linear-gradient(to bottom, #5494f3, #ffffff);
-    border-radius: 20px;
-}
-
-.register-box{
-    width: 20rem;
-    margin: 4rem;
-    border-radius: 10px;
-    background-color: #00246B;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #ffffff;
-    align-items: center;
-}
-
-
-@media(max-width: 500px){
-    .nav{
-        height: 5rem;
-        display: block;
-        font-size: 7px;
-    }
-    .right-nav{
-        display: none;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .heading h1 {
+        font-size: 1.2rem;
+        padding: 0.5rem;
     }
 
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        
-    }
-
-    .right-nav.show {
-        display: flex;
+    .main {
         flex-direction: column;
-        position: absolute;
-        top: 4rem;
-        right: 0;
-        background-color: #01024d6c;
-        width: 20%;
-        padding: 1rem;
-        z-index: 1;
+        align-items: center;
+        height: 100vh;
     }
 
-    .right-nav .user, .right-nav .notification, .right-nav .get-in-touch {
-        margin-left: 0;
-        margin-bottom: 1rem;
+    .login, .register {
+        width: 90%;
+        margin: 0.5rem;
+        height: 40%;
     }
 
+    .login .user, .login .employee, .register .register-box {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .main .btn {
+        width: 80%;
+    }
 }
 
-
-/* Media Query for Tablet-sized Screens */
-@media (min-width: 501px) and (max-width: 1024px) {
-    
-    .nav{
-        height: 3.5rem;
-    }
-    .nav .right-nav .user i{
-        font-size: 1.5rem;
+@media (max-width: 500px) {
+    .heading h1 {
+        font-size: 1rem;
     }
 
-    .nav .right-nav .notification i{
-        font-size: 1.5rem;
+    .main {
+        padding: 1rem;
+    }
+
+    .login .user, .login .employee, .register .register-box {
+        padding: 1rem;
+    }
+
+    .main .btn {
+        width: 100%;
     }
 }
