@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Finwin</title>
-        <link rel="icon" type="image/x-icon" href="/logo.png">
-        <link rel="stylesheet" href="nav.css">
-        <link rel="stylesheet" href="about.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    </head>
-    <body>
-        <div class="container">
-            <div class="nav">
-                <div class="left-nav">
-                    <div class="logo">
-                        <img src="logo.png" alt="no-logo">
-                    </div>
-                    <div class="company-name">
-                        <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
-                    </div>
-                </div>
-                
-                <div class="right-nav">
-                    <a href="/login-register">
-                        <div class="signup-register">
-                            <h3>Sign in</h3>
-                        </div>
-                    </a>
-                    <div class="get-in-touch">
-                        <a href="/getInTouch"><h3>Get in touch</h3></a>
-                    </div>
-                </div>
-        
-                <div class="hamburger">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <div class="mobile-menu">
-                    <a href="/login-register">
-                        <div class="signup-register">
-                            <h3>Sign in</h3>
-                        </div>
-                    </a>
-                    <div class="get-in-touch">
-                        <a href="/getInTouch"><h3>Get in touch</h3></a>
-                    </div>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finwin</title>
+    <link rel="icon" type="image/x-icon" href="/logo.png">
+    <link rel="stylesheet" href="/about.css">
+    <link rel="stylesheet" href="/nav.css">
+    <!-- Link swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="nav">
+        <div class="left-nav">
+            <div class="logo">
+                <img src="/logo.png" alt="no-logo">
             </div>
-            <div class="about-us">
-                <div class="content">
-                    <h1>About Us</h1>
-                    <p>Welcome to <strong>[Your Company Name]</strong>, your trusted partner in achieving financial freedom and success. As a pioneering One Person Company (OPC), we specialize in providing a comprehensive range of financial services tailored to meet the diverse needs of individuals and businesses alike.</p>
-        
-                    <h2>Our Services:</h2>
-                    <ul>
-                        <li><strong>Home Loans:</strong> Turn your dream of owning a home into reality with our easy and affordable home loan solutions.</li>
-                        <li><strong>Loan Against Property:</strong> Unlock the value of your property with our Loan Against Property options, providing you with the funds you need for various financial needs.</li>
-                        <li><strong>Balance Transfer:</strong> Optimize your loan repayment by transferring your existing loan balance to us for better interest rates and terms.</li>
-                        <li><strong>Personal Loans:</strong> Whether it’s for a wedding, vacation, or emergency, our personal loans offer quick and hassle-free access to the funds you need.</li>
-                        <li><strong>MSME Loans:</strong> Empowering small and medium-sized enterprises with the financial support necessary to grow, innovate, and succeed in today's competitive market.</li>
-                        <li><strong>Business Loans:</strong> Tailored financing solutions designed to help your business thrive, from working capital to expansion needs.</li>
-                    </ul>
-        
-                    <h2>Why Choose Us?</h2>
-                    <p>As an OPC, we are uniquely positioned to offer personalized attention and service, ensuring that your financial needs are met with the utmost care and efficiency. Our mission is to make the lending process as simple, transparent, and stress-free as possible, so you can focus on what matters most—achieving your goals.</p>
-        
-                    <h2>Our Commitment:</h2>
-                    <p>We are committed to providing you with the best financial solutions that are tailored to your unique needs. With competitive interest rates, flexible repayment options, and a focus on customer satisfaction, <strong>[Your Company Name]</strong> is your go-to financial partner for all your lending needs.</p>
-        
-                    <p>Thank you for choosing <strong>[Your Company Name]</strong>. We look forward to helping you achieve your financial aspirations.</p>
-                </div>
-                <div class="photo-box">
-                    <img src="your-photo.jpg" alt="Company Photo">
-                </div>
+            <div class="company-name">
+                <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
             </div>
         </div>
-    </body>
-    <script src="nav.js"></script>
+        
+        <div class="right-nav">
+            <div class="user">
+                <div class="icon-container" onclick="toggleBox()">
+                    <div class="icon"><i class="fa-regular fa-user"></i></div>
+                </div>
+                <div id="box" class="box">
+                    <button class="close-btn" onclick="toggleBox()">X</button>
+                    <h2><%= user.user_name %></h2>
+                    <p><%= user.user_email %></p>
+                    <div class="user-options">Account</div>
+                    <div class="user-options">Application Status</div>
+                    <div class="user-options">Notification</div>
+                    <div class="user-options">Log out</div>
+                </div>
+            </div>
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="get-in-touch">
+                <h3><a href="/getInTouchAfterLogin/<%= user.id %>">Get in touch</a></h3>
+            </div>
+        </div>
+
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="about-us">
+        <div class="content">
+            <h1>About Us</h1>
+            <p>Welcome to <strong>[Your Company Name]</strong>, your trusted partner in achieving financial freedom and success. As a pioneering One Person Company (OPC), we specialize in providing a comprehensive range of financial services tailored to meet the diverse needs of individuals and businesses alike.</p>
+
+            <h2>Our Services:</h2>
+            <ul>
+                <li><strong>Home Loans:</strong> Turn your dream of owning a home into reality with our easy and affordable home loan solutions.</li>
+                <li><strong>Loan Against Property:</strong> Unlock the value of your property with our Loan Against Property options, providing you with the funds you need for various financial needs.</li>
+                <li><strong>Balance Transfer:</strong> Optimize your loan repayment by transferring your existing loan balance to us for better interest rates and terms.</li>
+                <li><strong>Personal Loans:</strong> Whether it’s for a wedding, vacation, or emergency, our personal loans offer quick and hassle-free access to the funds you need.</li>
+                <li><strong>MSME Loans:</strong> Empowering small and medium-sized enterprises with the financial support necessary to grow, innovate, and succeed in today's competitive market.</li>
+                <li><strong>Business Loans:</strong> Tailored financing solutions designed to help your business thrive, from working capital to expansion needs.</li>
+            </ul>
+
+            <h2>Why Choose Us?</h2>
+            <p>As an OPC, we are uniquely positioned to offer personalized attention and service, ensuring that your financial needs are met with the utmost care and efficiency. Our mission is to make the lending process as simple, transparent, and stress-free as possible, so you can focus on what matters most—achieving your goals.</p>
+
+            <h2>Our Commitment:</h2>
+            <p>We are committed to providing you with the best financial solutions that are tailored to your unique needs. With competitive interest rates, flexible repayment options, and a focus on customer satisfaction, <strong>[Your Company Name]</strong> is your go-to financial partner for all your lending needs.</p>
+
+            <p>Thank you for choosing <strong>[Your Company Name]</strong>. We look forward to helping you achieve your financial aspirations.</p>
+        </div>
+        <div class="photo-box">
+            <img src="your-photo.jpg" alt="Company Photo">
+        </div>
+    </div>
+</body>
+<script src="/nav.js"></script>
 </html>

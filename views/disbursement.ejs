@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finwin</title>
+    <link rel="icon" type="image/x-icon" href="/logo.png">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/table-data.css">
+    <!-- Link swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="nav">
+        <div class="left-nav">
+            <div class="logo">
+                <img src="/logo.png" alt="no-logo">
+            </div>
+            <div class="company-name">
+                <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
+            </div>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>CM_No</th>
+                    <th>CM_Name</th>
+                    <th>CM_Mobile</th>
+                    <th>CM_Email</th>
+                    <th>Login_Date</th>
+                    <th>Login_Month</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Disbursement_Date</th>
+                    <th>Disbursement_Month</th>
+                    <th>Reference</th>
+                    <th>Branch</th>
+                    <th>Branch_Head</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(cm) { %>
+                    <tr>
+                        <td><%= cm.CM_No %></td>
+                        <td><%= cm.CM_Name %></td>
+                        <td><%= cm.CM_Mobile %></td>
+                        <td><%= cm.CM_Email %></td>
+                        <td><%= cm.Login_Date %></td>
+                        <td><%= cm.Login_Month %></td>
+                        <td><%= cm.Amount %></td>
+                        <td><%= cm.Status %></td>
+                        <td><%= cm.Disbursement_Date %></td>
+                        <td><%= cm.Disbursement_Month %></td>
+                        <td><%= cm.Reference %></td>
+                        <td><%= cm.Branch %></td>
+                        <td><%= cm.Branch_Head %></td>
+                        <td><button class="update-btn">Update</button></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

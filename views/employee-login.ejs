@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finwin</title>
     <link rel="icon" type="image/x-icon" href="/logo.png">
-    <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="login-registerStyle.css">
+    <link rel="stylesheet" href="user-register.css">
+    <link rel="stylesheet" href="nav.css">
     <!-- Link swiper js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -23,10 +24,7 @@
             </div>
         </div>
         <div class="right-nav">
-            <div class="user">
-            </div>
-            <div class="notification">
-            </div>
+            
             <div class="get-in-touch">
                 <a href="/getInTouch"><h3>Get in touch</h3></a>
             </div>
@@ -41,26 +39,18 @@
         <h1>Welcome to FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
     </div>
 
-    <div class="main">
-        <div class="login">
-            <div class="user">
-                <h2>User Login</h2>
-                <p>Access your account by logging in</p>
-                <a href="/user-login"><div class="btn">Log in</div></a>
-            </div>
-            <div class="employee">
-                <h2>Employee Login</h2>
-                <p>Access your account by logging in</p>
-                <a href="/employee-login"><div class="btn">Log in</div></a>
-            </div>
+    <form action="/employee" method="post" class="login-form">
+        <% if (message) { %>
+            <p style="color: red;"><%= message %></p>
+        <% } %>
+        <label for="email">Enter your employee id:</label>
+        <input type="text" placeholder="Employee ID" id="empid" name="empid">
+        <label for="pass">Enter Password:</label>
+        <input type="password" placeholder="Enter password" id="pass" name="pass">
+        
+        <div class="btns">
+            <button type="submit">Log in</button>
         </div>
-        <div class="register">
-            <div class="register-box">
-                <h2>Register</h2>
-                <p>Join Us Today! Create a new account to get started.</p>
-                <a href="/user-register"><div class="btn">Log in</div></a>
-            </div>
-        </div>
-    </div>
+    </form>
 </body>
 </html>

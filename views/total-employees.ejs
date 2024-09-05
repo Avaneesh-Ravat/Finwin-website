@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finwin</title>
+    <link rel="icon" type="image/x-icon" href="/logo.png">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/table-data.css">
+    <link rel="stylesheet" href="/employeeForm.css">
+    <!-- Link swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="nav">
+        <div class="left-nav">
+            <div class="logo">
+                <img src="/logo.png" alt="no-logo">
+            </div>
+            <div class="company-name">
+                <h1>FINWIN Digital Solutions (OPC) Pvt. Ltd.</h1>
+            </div>
+        </div>
+    </div>
+    <button class="add-employee-btn" id="showFormBtn">Add Employee</button>
+    
+    <div class="employee-add-form" id="employeeForm">
+        <div class="form-header">
+            <h2>Add Employee</h2>
+            <button class="close-btn" id="closeFormBtn">X</button>
+        </div>
+        <form action="/addEmployee" method="POST">
+            <div class="form-group">
+                <label for="empid">Employee ID:</label>
+                <input type="text" id="empid" name="empid" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" id="salary" name="salary" required>
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name="designation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Add Employee</button>
+        </form>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee name</th>
+                    <th>Employee phone</th>
+                    <th>Employee email</th>
+                    <th>Employee salary</th>
+                    <th>Employee designation</th>
+                    <th>Employee Password</th>
+                    <th>Employee gender</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(emp) { %>
+                    <tr>
+                        <td><%= emp.emp_id %></td>
+                        <td><%= emp.emp_name %></td>
+                        <td><%= emp.emp_phone %></td>
+                        <td><%= emp.emp_email %></td>
+                        <td><%= emp.emp_salary %></td>
+                        <td><%= emp.emp_designation %></td>
+                        <td><%= emp.emp_password %></td>
+                        <td><%= emp.emp_gender %></td>
+                        <td><a href="/deleteEmployee/<%= emp.emp_id %>"><button class="update-btn">Delete</button></a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Get the form and buttons
+        const employeeForm = document.getElementById('employeeForm');
+        const showFormBtn = document.getElementById('showFormBtn');
+        const closeFormBtn = document.getElementById('closeFormBtn');
+
+        // Show the form when "Add Employee" button is clicked
+        showFormBtn.addEventListener('click', () => {
+            employeeForm.style.display = 'block';
+        });
+
+        // Hide the form when the cross (X) button is clicked
+        closeFormBtn.addEventListener('click', () => {
+            employeeForm.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

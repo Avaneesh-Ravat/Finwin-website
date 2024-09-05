@@ -87,8 +87,8 @@
                     <div class="option" id="current">Home</div>
                     <div class="option"><a href="/eligibilitycalc/<%= user.id %>">Loan Eligibility</a></div>
                     <div class="option"><a href="/emiCalculator/<%= user.id %>">Calculator</a></div>
-                    <div class="option">Interest rates</div>
-                    <div class="option">About us</div>
+                    <div class="option"><a href="/interestRates/<%= user.id %>">Interest rates</a></div>
+                    <div class="option"><a href="/aboutus/<%= user.id %>">About us</a></div>
                     <div class="option">More</div>
                 </div>
                 <div class="image">
@@ -127,76 +127,76 @@
                 <div class="providers swiper-wrapper">
 
                     <div class="provider swiper-slide">
-                        <img src="/images/central-bank.png" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/central-bank.png" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/CBI-Bank" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/bank-of-maharashtra.png" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/bank-of-maharashtra.png" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/Bank-of-Maharashtra" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/indian-bank.webp" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/indian-bank.webp" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/Indian-Bank" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/SBI.jpg" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/SBI.jpg" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/SBI-Bank" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/hdfc-bank.webp" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/hdfc-bank.webp" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/HDFC-Bank" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/IDBI.avif" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/IDBI.avif" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/IDBI-Bank" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/Axis-bank.jpg" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/Axis-bank.jpg" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/Axis-Bank" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/bajaj-bank.jpg" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/bajaj-bank.jpg" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/Bajaj-housing" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/adhar.png" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/adhar.png" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/Adhaar-housing" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
+                    </div>
+                    <div class="provider swiper-slide ">
+                        <img src="images/pnb.png" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/PNB-housing" class="bank-plans"><div class="view-btn">
+                            <p>View Plans</p>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/pnb.png" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/DMIHF.webp" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/DMI-housing" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                     <div class="provider swiper-slide">
-                        <img src="/images/DMIHF.webp" alt="bank image" class="bank-image">
-                        <div class="view-btn">
+                        <img src="images/shubham.avif" alt="bank image" class="bank-image">
+                        <a href="/bank-pages/Shubham-housing" class="bank-plans"><div class="view-btn">
                             <p>View Plans</p>
-                        </div>
-                    </div>
-                    <div class="provider swiper-slide">
-                        <img src="/images/shubham.avif" alt="bank image" class="bank-image">
-                        <div class="view-btn">
-                            <p>View Plans</p>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -204,6 +204,7 @@
                 <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </div>
+
 
 <!-- ------------------Credit Products----------------------------- -->
 
@@ -216,9 +217,11 @@
                 <div class="content">
                     <h3>Home Loan</h3>
                     <p>Choose the most competitive interest rates for your perfect home.</p>
-                    <div class="btn">
-                        Check Eligibility →
-                    </div>
+                    <a href="/eligibilitycalc/<%= user.id %>">
+                        <div class="btn">
+                            Check Eligibility →
+                        </div>
+                    </a>
                 </div>
                 <div class="image">
                     <img src="/images/home-loan.png" alt="symbol">
@@ -228,9 +231,11 @@
                 <div class="content">
                     <h3>Loan Against Property</h3>
                     <p>Acquire funds secured by your property at the lowest interest rates available.</p>
-                    <div class="btn">
-                        Check Eligibility →
-                    </div>
+                    <a href="/eligibilityCalc/<%= user.id %>">
+                        <div class="btn">
+                            Check Eligibility →
+                        </div>
+                    </a>
                 </div>
                 <div class="image">
                     <img src="/images/loan-against-property.png" alt="symbol">
@@ -240,9 +245,11 @@
                 <div class="content">
                     <h3>Balance Transfer</h3>
                     <p>Obtain more favorable interest rates for your existing home loan.</p>
-                    <div class="btn">
-                        Reduce Your EMI →
-                    </div>
+                    <a href="/emiCalculator/<%= user.id %>">
+                        <div class="btn">
+                            Reduce Your EMI →
+                        </div>
+                    </a>
                 </div>
                 <div class="image">
                     <img src="/images/transfer-home-loan.png" alt="symbol">
@@ -252,6 +259,7 @@
                 <div class="content">
                     <h3>Personal Loan</h3>
                     <p>Find the most suitable offer from a comprehensive selection of banks and NBFCs, customized to meet your requirements.</p>
+                    <a href=""
                     <div class="btn">
                         Check Eligibility →
                     </div>

@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data-boxes{
+    width: 25rem;
+    border: 1px solid rgb(183, 183, 183);
+    margin: 2rem;
+    padding: 0.5rem;
+    padding-top: 1rem;
+    border-radius: 0.5rem;
+    height: 10rem;
+}
+
+.data-boxes:hover{
+    box-shadow: 4px 4px 10px #d6d7d8d3;
+}
+
+.data-boxes p{
+    color: grey;
+    font-size: 1rem; 
+}
+
+.data-boxes h2{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.data-boxes .data-btn{
+    margin-top: 1.5rem;
+    color: blue;
+    cursor: pointer;
+}
+
+
+

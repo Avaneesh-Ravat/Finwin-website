@@ -1,4 +1,4 @@
-.box{
+.box-roi{
     width: 25rem;
     height: 30rem;
     border: 1px solid rgb(152, 152, 152);
@@ -8,24 +8,24 @@
     box-shadow: 2px 2px 20px #b2b2b3d3;
 }
 
-.box h1{
+.box-roi h1{
     text-align: center;
     margin-bottom: .5rem;
 }
 
-.box ul{
+.box-roi ul{
     margin-left: 1rem;
 }
 
-.box h2{
+.box-roi h2{
     margin: .5rem 0;
 }
 
-.box li{
+.box-roi li{
     color: #4d4d4d;
 }
 
-.box .btn{
+.box-roi .btn{
     width: 13rem;
     height: 3rem;
     margin-left: 5rem;

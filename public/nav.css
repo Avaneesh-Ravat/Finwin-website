@@ -32,9 +32,9 @@ a {
     margin-left: 10px; /* Optional: spacing between the items */
 }
 
-.nav .left-nav .logo img {
-    height: 3rem;
-    margin: .5rem 0;
+.nav .left-nav .logo img{
+    height: 7rem;
+    margin: .7rem 0 .5rem 0;
 }
 
 .nav .left-nav .company-name h1 {
